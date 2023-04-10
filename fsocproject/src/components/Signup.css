@@ -1,13 +1,12 @@
-.signUp{
-    background-size: cover;
-   flex:1;
-   width: 100vw;
-   height:100vw;
-   display:flex;
+.signUp {
+   background-size: cover;
+   /* height: 100vh; */
+   display: flex;
    justify-content: center;
-}
+   margin-top: 50px;
+ }
 .form{
-   background-color: antiquewhite;
+   background-color: hsla(235, 31%, 86%, 0.863);
    padding: 30px;
    border :1px solid rgba(124, 97, 97, 0.726),
    border -radius 1px;
@@ -37,7 +36,7 @@ input{
 
 }
 .form2{
-   background-color: aliceblue;
+   background-color: rgb(235, 241, 253);
    padding: 30px;
    margin-top: 5px;
    border :1px solid rgba(124, 97, 97, 0.726),

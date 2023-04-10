@@ -1,19 +1,19 @@
-.signIn{
+.signIn {
     background-size: cover;
-   flex:1;
-   width: 100vw;
-   height:100vw;
-   display:flex;
-   justify-content: center;
-}
+    flex: 1;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+  }
 
 .logInForm{
-    background-color: antiquewhite;
+    background-color: hsla(235, 31%, 86%, 0.863);
     padding: 30px;
     border :1px solid rgba(124, 97, 97, 0.726),
     border -radius 1px;
-
 }
+
 input{
     padding:5px;
     margin:3px  0px;
@@ -22,8 +22,9 @@ input{
     width:100%;
     box-sizing:border-box;
 }
-#logIn{
-    background-color: rgb(173, 71, 134);
+
+/* #logIn{
+    background-color: hsla(234, 64%, 55%, 0.863);
     border:none;
     border-radius: 3px;
     color: beige;
@@ -32,9 +33,10 @@ input{
     width:80%;
     cursor: pointer;
 
- }
- .loginForm2{
-    background-color: aliceblue;
+ } */
+
+.loginForm2{
+    background-color: rgb(235, 241, 253);
     padding: 30px;
     margin-top: 5px;
     border :1px solid rgba(124, 97, 97, 0.726),

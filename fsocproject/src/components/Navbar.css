@@ -1,11 +1,15 @@
 
 .navbar{
     display:flex;
-    justify-content: space-around;
-    box-shadow: 1px 5px 5px hsla(310, 69%, 51%, 0.863);
+    justify-content :space-between;
+    align-items: center;
+    box-shadow: 1px 5px 5px hsla(234, 64%, 55%, 0.863);
 }
 .nav-menu{
-    display:flex
+    display:flex;
+    justify-content:space-around;
+    margin-right : 20px;
+    margin-top: 20px;
 }
 li{
     list-style: none;
@@ -16,3 +20,18 @@ a{
     color:black;
     font-size : 15px;
 }
+.logo{
+    height: 60px;
+    margin-left: 20px;
+
+}
+.name{
+    font-size: 25px;
+    margin-left: 100px;
+}
+
+.nav-menu-divider {
+    margin: 0 10px;
+    font-weight: bold;
+    color: #666;
+  }
