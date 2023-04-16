@@ -19,17 +19,18 @@ export default function Navbar() {
   function handleLogout() {
     if (localStorage.getItem('token') !== null) {
       localStorage.removeItem('token');
-      Navigate("/")
+      localStorage.removeItem("userId")
+      Navigate("/signin")
       setIsLoggedIn(false); 
     }
   }
   
   return (
       <div className='navbar'>
-        <Link to="/">
+        <Link to="/rooms">
         <img src ={logo} alt="TalkSpot logo" className="logo"/> 
         </Link>
-        <Link to='/'>
+        <Link to='/rooms'>
         <li className='name'>TalkiesSpot</li>
         </Link> 
         <ul className ="nav-menu">
@@ -54,27 +55,3 @@ export default function Navbar() {
       </div>
     )
 }
-
-
-//  <div className='navbar'>
-//      <Link to='/' >
-//       <img src ={logo} alt="TalkSpot logo" className="logo"/> 
-//      </Link>
-//      <Link to='/'>
-//      <li className='name'>TalkiesSpot</li>
-//      </Link> 
-//       <ul className ="nav-menu">
-
-//         <Link to ="/SignUp">
-//         {/* <li>Sign Up</li> */}
-//         <button type="button" className="btn btn-outline-primary">Sign up</button>
-//         </Link>
-//         <span className="nav-menu-divider"></span>
-//         <Link to ="/SignIn">
-//         {/* <li>Sign In</li> */}
-//         <button type="button" className="btn btn-outline-primary">Sign In</button>
-//         </Link>
-
-//       </ul>
-//     </div>
-    

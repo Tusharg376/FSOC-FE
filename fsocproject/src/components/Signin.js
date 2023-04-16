@@ -1,4 +1,4 @@
-import React,{ useState } from 'react';
+import React,{ useEffect, useState } from 'react';
 import "./Signin.css";
 import { Link,useNavigate } from 'react-router-dom';
 import axios from 'axios'
@@ -7,37 +7,39 @@ import { useAppState } from '../Store/app.state';
 export default function SignIn() {
   
   const Navigate = useNavigate()
-
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
   const setToken = useAppState((state)=> state.setToken)
   
+  const token = localStorage.getItem("token")
+  
+  useEffect(()=>{
+    const fetchData =  ()=>{
+        if(token){
+            Navigate('/rooms')
+        }    
+    }
+    fetchData()
+})
+  
   const userLogin = async () => {
-    if(email === "" && password === ""){
-      window.alert("Please enter Email and Password")
-      return
-    }
-    if(email === ""){
-      window.alert("Please enter Email")
-      return
-    }
-    if(password === ""){
-      window.alert("Please enter Password")
-      return
-    }
 
-    const data = await axios.post("http://localhost:3001/login",{
+    await axios.post("https://talkiesspot.onrender.com/login",{
       email,
       password
     })
-    if (data.data.status === true){
-      setToken(data.data.token)
-      localStorage.setItem("token",data.data.token)
-      Navigate("/rooms")
-    }else{
-      window.alert(data.data.message)
-    }
+    .then((res)=>{
+      // console.log(res.data)
+      const state = { propData: res.data }
+      setToken(res.data.token)
+      localStorage.setItem("userId",res.data.userId)
+      localStorage.setItem("token",res.data.token)
+      Navigate("/rooms",{state})
+    })
+    .catch((err)=>{
+      window.alert(err.response.data.message)
+    })
   }
 
   return (
